@@ -21,6 +21,7 @@
     <object>objects\obj_player_stats</object>
     <object>objects\obj_floor</object>
     <object>objects\obj_attack</object>
+    <object>objects\obj_enemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
