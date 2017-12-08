@@ -10,6 +10,8 @@
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\spr_enemy_1</sprite>
     <sprite>sprites\spr_attack</sprite>
+    <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\spr_healthborder</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -22,6 +24,7 @@
     <object>objects\obj_floor</object>
     <object>objects\obj_attack</object>
     <object>objects\obj_enemy</object>
+    <object>objects\object5</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
