@@ -26,11 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>//Jump Variables
-canJump = true;
-jumpHeight = 0;
-jumpSpd = -30;
+can_jump = true;
+jump_height = 0;
+jump_spd = -30;
 grav = 1;
-dropSpd = 0;
+drop_spd = 0;
+
+//Movement
+direction_facing = 0;
 </string>
           </argument>
         </arguments>
@@ -56,25 +59,27 @@ dropSpd = 0;
             <string>scr_input();
 if (key_left == true) {
     x -= 5;
+    direction_facing = 0;
 }
 if (key_right == true) {
     x+= 5;
+    direction_facing = 1;
 }
 if (key_jump == true 
-//&amp;&amp; jumpHeight != 100 
-&amp;&amp; jumpSpd != 0) {
-   y += jumpSpd;
-   jumpSpd += grav;
-   if (dropSpd == 0) {
-      dropSpd = 2;
+//&amp;&amp; jump_height != 100 
+&amp;&amp; jump_spd != 0) {
+   y += jump_spd;
+   jump_spd += grav;
+   if (drop_spd == 0) {
+      drop_spd = 2;
    } else {
-     dropSpd *= 1.05;
+     drop_spd *= 1.05;
    }
-   //jumpHeight += 20;
+   //jump_height += 20;
 }
-if (dropSpd != 0) {
-    if (!place_meeting(x,y+dropSpd,obj_floor &amp;&amp; collision_line(x,y,x,y+dropSpd,obj_floor,false,true == noone))) {
-       y += dropSpd;
+if (drop_spd != 0) {
+    if (!place_meeting(x,y+drop_spd,obj_floor &amp;&amp; collision_line(x,y,x,y+drop_spd,obj_floor,false,true == noone))) {
+       y += drop_spd;
     }
 }else if (!place_meeting(x,y+3,obj_floor)) {
    y += 3;
@@ -82,9 +87,9 @@ if (dropSpd != 0) {
       y+= 1;      
 }
 if (place_meeting(x,y+1,obj_floor)) {
-   jumpHeight = 0;
-   jumpSpd = -20;
-   dropSpd = 0;
+   jump_height = 0;
+   jump_spd = -20;
+   drop_spd = 0;
 }
 if (instance_position(x,y,obj_floor) != noone) {
    inFloor = instance_position(x,y,obj_floor);
@@ -112,7 +117,12 @@ if (instance_position(x,y,obj_floor) != noone) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,obj_attack);
+            <string>//Looking Left
+if (direction_facing = 0) {
+    instance_create(x-16,y,obj_hitbox);
+}else {
+    instance_create(x+16,y,obj_hitbox);
+}
 </string>
           </argument>
         </arguments>

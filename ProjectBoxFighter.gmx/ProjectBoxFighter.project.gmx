@@ -11,12 +11,16 @@
     <sprite>sprites\spr_enemy_1</sprite>
     <sprite>sprites\spr_attack</sprite>
     <sprite>sprites\sprite4</sprite>
-    <sprite>sprites\spr_healthborder</sprite>
+    <sprite>sprites\spr_health_border</sprite>
+    <sprite>sprites\spr_health_background</sprite>
+    <sprite>sprites\spr_healthbar</sprite>
+    <sprite>sprites\hitbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_input.gml</script>
+    <script>scripts\draw_enemy_health.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -25,6 +29,7 @@
     <object>objects\obj_attack</object>
     <object>objects\obj_enemy</object>
     <object>objects\object5</object>
+    <object>objects\obj_hitbox</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
