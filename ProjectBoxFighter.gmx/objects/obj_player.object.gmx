@@ -119,9 +119,9 @@ if (instance_position(x,y,obj_floor) != noone) {
             <kind>1</kind>
             <string>//Looking Left
 if (direction_facing = 0) {
-    instance_create(x-16,y,obj_hitbox);
+    instance_create(x-32,y,obj_hitbox);
 }else {
-    instance_create(x+16,y,obj_hitbox);
+    instance_create(x+32,y,obj_hitbox);
 }
 </string>
           </argument>

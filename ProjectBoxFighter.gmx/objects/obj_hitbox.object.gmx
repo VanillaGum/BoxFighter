@@ -78,7 +78,7 @@ hit = 0;
     hit++;
     other.hp -= 5;
     other.is_hit = true;
-    show_message("Hit:" + string(hit) + "enemies");
+    //show_message("Hit:" + string(hit) + "enemies");
 }
 </string>
           </argument>
