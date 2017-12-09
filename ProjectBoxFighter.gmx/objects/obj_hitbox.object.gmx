@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>max_hit = 3;
 hit = 0;
+enemy_list = ds_list_create();
 </string>
           </argument>
         </arguments>
@@ -49,9 +50,40 @@ hit = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hit == max_hit) {
-    instance_destroy(self);
+            <string>var thisid = id;
+with(obj_enemy) {
+    if (place_meeting(x,y,obj_hitbox)) {
+        ds_list_add(thisid.enemy_list,id)
+    }
 }
+
+if (!ds_list_empty(enemy_list)) {
+    ds_list_sort(enemy_list,true);
+    //If Leser than 3 enemies collided
+    if (ds_list_size(enemy_list) &lt; 3) {
+        for (i = 0; i &lt; ds_list_size(enemy_list);i++) {
+            var enemy = ds_list_find_value(enemy_list,i);
+            if(enemy != noone) {
+                enemy.hp -= 5;
+            }
+            hit++;
+        }  
+    }else {
+        //If Collide with 3 or more enemies
+        //Hit only lowest 3 health enemies
+        for (i = 0; i &lt; 3;i++) {
+            var enemy = ds_list_find_value(enemy_list,i);
+            if(enemy != noone) {
+                enemy.hp -= 5;
+            }
+            hit++;
+        }  
+    } 
+    if (hit == max_hit) {
+        instance_destroy(self);
+    }
+}
+ds_list_empty(enemy_list);
 </string>
           </argument>
         </arguments>
@@ -74,12 +106,7 @@ hit = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (hit != max_hit &amp;&amp; other.is_hit == false) {
-    hit++;
-    other.hp -= 5;
-    other.is_hit = true;
-    //show_message("Hit:" + string(hit) + "enemies");
-}
+            <string>ds_list_add(enemy_list,other.id);
 </string>
           </argument>
         </arguments>

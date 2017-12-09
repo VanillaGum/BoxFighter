@@ -21,6 +21,7 @@
   <scripts name="scripts">
     <script>scripts\scr_input.gml</script>
     <script>scripts\draw_enemy_health.gml</script>
+    <script>scripts\instance_place_enemy.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -32,6 +33,7 @@
     <object>objects\obj_hitbox</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room1</room>
     <room>rooms\room0</room>
   </rooms>
   <help>
