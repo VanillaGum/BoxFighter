@@ -22,6 +22,8 @@
     <script>scripts\scr_input.gml</script>
     <script>scripts\draw_enemy_health.gml</script>
     <script>scripts\instance_place_enemy.gml</script>
+    <script>scripts\scr_hit_enemy.gml</script>
+    <script>scripts\scr_hitbox_enemylist.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
