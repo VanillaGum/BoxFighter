@@ -28,6 +28,10 @@
             <string>hp = 40;
 maxhp = hp;
 is_hit = false;
+enemy_speed = 5;
+execute_scr = scr_na_enemy_chase;
+//Script Values
+type = 0;
 </string>
           </argument>
         </arguments>
@@ -78,6 +82,7 @@ is_hit = false;
 }
 if (hp &lt;= 0) {
     instance_destroy(self);
+    obj_player_stats.xp += 500;
 }
 </string>
           </argument>
@@ -101,12 +106,7 @@ if (hp &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (x &gt; obj_player.x &amp;&amp; !place_meeting(x-3,y,obj_enemy)) {
-   x -= 3;
-}
-if (x &lt; obj_player.x &amp;&amp;  !place_meeting(x+3,y,obj_enemy)) {
-   x += 3;
-}
+            <string>script_execute(execute_scr,type);
 </string>
           </argument>
         </arguments>

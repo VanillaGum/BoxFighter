@@ -25,17 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xp = 0;
-xp_tolevel = 10;
-xp_multiplier = 1.1;
-level = 1;
-
+            <string>alarm[0] = 1
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -52,34 +48,10 @@ level = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (xp &gt;= xp_tolevel) {
-   level++;
-   xp -= xp_tolevel;
-   xp_tolevel *=xp_multiplier;
+            <string>for (i=0;i&lt;3;i++) {
+    instance_create(x+(32*i),y,obj_enemy);
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_text(x+32,y+128,string(level));
+alarm[0] = 60;
 </string>
           </argument>
         </arguments>

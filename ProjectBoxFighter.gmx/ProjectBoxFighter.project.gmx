@@ -24,6 +24,10 @@
     <script>scripts\instance_place_enemy.gml</script>
     <script>scripts\scr_hit_enemy.gml</script>
     <script>scripts\scr_hitbox_enemylist.gml</script>
+    <scripts name="Non-attack Enemies">
+      <script>scripts\scr_na_enemy_chase_check.gml</script>
+      <script>scripts\scr_na_enemy_chase.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -33,6 +37,7 @@
     <object>objects\obj_enemy</object>
     <object>objects\object5</object>
     <object>objects\obj_hitbox</object>
+    <object>objects\obj_spawner_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
