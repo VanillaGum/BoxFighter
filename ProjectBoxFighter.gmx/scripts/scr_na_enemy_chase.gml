@@ -6,9 +6,17 @@ type = argument0;
 //Types
 //0:Can not drop down and jump
 //1:Can Drop Down + Jump Up Floor 
-if (direction_chase == 1) {
+if (bounce > 0) {
+   if(bounce < enemy_speed) {
+             x+= bounce*bounceDir;
+             bounce -= bounce;
+   }else {
+         x+= enemy_speed*bounceDir;
+         bounce -=enemy_speed;
+   }
+}else if (direction_chase == 1) {
    //Go Left
-   //Check if can go down floor
+   //Check if cannot go down floor
    if (type == 0) {
       //Check if there is floor 
       if (place_meeting(x-enemy_speed,y+32,obj_floor)) {
@@ -20,7 +28,8 @@ if (direction_chase == 1) {
                   x-=1;   
                }else{
                      //Do A bounce
-                     x+= enemy_speed;           
+                     bounceDir = 1;
+                     scr_na_enemy_bounce();     
                }
          } 
       }else{
@@ -30,11 +39,12 @@ if (direction_chase == 1) {
                x-=1;
             }else{
                   //Do a bounce
-                  x+= enemy_speed;
+                  bounceDir = 1;
+                  scr_na_enemy_bounce();
             }
       }
    }else {
-   
+   //Can go down floor type
    }
 }else {
    //Go Right

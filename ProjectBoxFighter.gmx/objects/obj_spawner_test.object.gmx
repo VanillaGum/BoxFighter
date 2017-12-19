@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>alarm[0] = 1
+disabled = false;
+alarmtime = 60;
 </string>
           </argument>
         </arguments>
@@ -48,10 +50,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for (i=0;i&lt;3;i++) {
-    instance_create(x+(32*i),y,obj_enemy);
+            <string>if (!disabled) {
+    for (i=0;i&lt;3;i++) {
+        instance_create(x+(32*i),y,obj_enemy);
+    }
 }
-alarm[0] = 60;
+alarm[0] = alarmtime;
 </string>
           </argument>
         </arguments>

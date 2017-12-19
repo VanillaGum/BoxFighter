@@ -74,6 +74,7 @@ scr_player_gainxp();
             <kind>1</kind>
             <string>draw_text(x+32,y+128,string(level));
 scr_player_exp_draw();
+draw_text(32,32,string(fps_real));
 </string>
           </argument>
         </arguments>

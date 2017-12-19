@@ -28,10 +28,16 @@
             <string>hp = 40;
 maxhp = hp;
 is_hit = false;
-enemy_speed = 5;
 execute_scr = scr_na_enemy_chase;
 //Script Values
+enemy_speed = 5;
 type = 0;
+bounce = 0;
+bounceDir = 1;
+//Lowest And Highest To Move From Tip Of Floor
+//Only for non jump off floor types
+bounceLow = 50;
+bounceHigh = 90;
 </string>
           </argument>
         </arguments>

@@ -30,11 +30,14 @@
     <scripts name="Non-attack Enemies">
       <script>scripts\scr_na_enemy_chase_check.gml</script>
       <script>scripts\scr_na_enemy_chase.gml</script>
+      <script>scripts\scr_na_enemy_bounce.gml</script>
     </scripts>
-    <script>scripts\scr_player_gainxp.gml</script>
-    <script>scripts\scr_player_levelup.gml</script>
-    <script>scripts\scr_player_exp_init.gml</script>
-    <script>scripts\scr_player_exp_draw.gml</script>
+    <scripts name="Player_Xp">
+      <script>scripts\scr_player_exp_init.gml</script>
+      <script>scripts\scr_player_exp_draw.gml</script>
+      <script>scripts\scr_player_gainxp.gml</script>
+      <script>scripts\scr_player_levelup.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
