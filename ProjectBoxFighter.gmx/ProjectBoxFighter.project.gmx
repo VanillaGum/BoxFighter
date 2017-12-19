@@ -15,6 +15,9 @@
     <sprite>sprites\spr_health_background</sprite>
     <sprite>sprites\spr_healthbar</sprite>
     <sprite>sprites\hitbox</sprite>
+    <sprite>sprites\spr_xpbar</sprite>
+    <sprite>sprites\spr_xpbar_fill</sprite>
+    <sprite>sprites\spr_xpbar_inner</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -28,6 +31,10 @@
       <script>scripts\scr_na_enemy_chase_check.gml</script>
       <script>scripts\scr_na_enemy_chase.gml</script>
     </scripts>
+    <script>scripts\scr_player_gainxp.gml</script>
+    <script>scripts\scr_player_levelup.gml</script>
+    <script>scripts\scr_player_exp_init.gml</script>
+    <script>scripts\scr_player_exp_draw.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>

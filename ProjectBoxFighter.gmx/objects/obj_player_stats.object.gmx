@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>xp = 0;
-xp_tolevel = 10;
-xp_multiplier = 1.1;
-level = 1;
-
+            <string>scr_player_exp_init();
 </string>
           </argument>
         </arguments>
@@ -52,11 +48,8 @@ level = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (xp &gt;= xp_tolevel) {
-   level++;
-   xp -= xp_tolevel;
-   xp_tolevel *=xp_multiplier;
-}
+            <string>scr_player_levelup();
+scr_player_gainxp();
 </string>
           </argument>
         </arguments>
@@ -80,6 +73,7 @@ level = 1;
           <argument>
             <kind>1</kind>
             <string>draw_text(x+32,y+128,string(level));
+scr_player_exp_draw();
 </string>
           </argument>
         </arguments>

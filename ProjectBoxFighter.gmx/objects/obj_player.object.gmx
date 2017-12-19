@@ -100,7 +100,7 @@ if (instance_position(x,y,obj_floor) != noone) {
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="82">
+    <event eventtype="5" enumb="82">
       <action>
         <libid>1</libid>
         <id>603</id>

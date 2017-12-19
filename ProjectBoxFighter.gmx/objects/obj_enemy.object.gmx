@@ -82,7 +82,7 @@ type = 0;
 }
 if (hp &lt;= 0) {
     instance_destroy(self);
-    obj_player_stats.xp += 500;
+    obj_player_stats.xp += 5000;
 }
 </string>
           </argument>
