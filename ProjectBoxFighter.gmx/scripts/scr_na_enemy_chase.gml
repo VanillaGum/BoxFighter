@@ -48,4 +48,33 @@ if (bounce > 0) {
    }
 }else {
    //Go Right
+   if (type == 0) {
+      //Check if there is floor 
+      if (place_meeting(x+enemy_speed,y+32,obj_floor)) {
+         //Check if wall in front
+         if (!place_meeting(x+enemy_speed,y,obj_floor)) {
+            x+=enemy_speed;
+         }else{
+               if (place_meeting(x+1,y,obj_floor)) {
+                  x+=1;   
+               }else{
+                     //Do A bounce
+                     bounceDir = -1;
+                     scr_na_enemy_bounce();     
+               }
+         } 
+      }else{
+            //No Floor
+            //Check if at tip of floor
+            if (place_meeting(x+1,y+32,obj_floor)) {
+               x+=1;
+            }else{
+                  //Do a bounce
+                  bounceDir = -1;
+                  scr_na_enemy_bounce();
+            }
+      }
+   }else {
+   //Can go down floor type
+   }
 }
