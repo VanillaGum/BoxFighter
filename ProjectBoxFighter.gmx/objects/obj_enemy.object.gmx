@@ -34,6 +34,7 @@ enemy_speed = 5;
 type = 0;
 bounce = 0;
 bounceDir = 1;
+direction_chase = 0;
 //Lowest And Highest To Move From Tip Of Floor
 //Only for non jump off floor types
 bounceLow = 50;
