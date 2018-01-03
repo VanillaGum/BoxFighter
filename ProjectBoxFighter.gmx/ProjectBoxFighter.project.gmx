@@ -18,6 +18,7 @@
     <sprite>sprites\spr_xpbar</sprite>
     <sprite>sprites\spr_xpbar_fill</sprite>
     <sprite>sprites\spr_xpbar_inner</sprite>
+    <sprite>sprites\spr_door</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -48,10 +49,11 @@
     <object>objects\object5</object>
     <object>objects\obj_hitbox</object>
     <object>objects\obj_spawner_test</object>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
-    <room>rooms\room0</room>
+    <room>rooms\room2</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

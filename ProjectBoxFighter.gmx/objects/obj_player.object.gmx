@@ -58,12 +58,22 @@ direction_facing = 0;
             <kind>1</kind>
             <string>scr_input();
 if (key_left == true) {
-    x -= 5;
-    direction_facing = 0;
+    if (!place_meeting(x-5,y,obj_floor)) {
+        x -= 5;
+        direction_facing = 0;
+    }else if (!place_meeting(x-1,y,obj_floor)) {
+          x-= 1;
+          direction_facing = 0;
+    }
 }
 if (key_right == true) {
-    x+= 5;
-    direction_facing = 1;
+   if (!place_meeting(x+5,y,obj_floor)) {
+        x += 5;
+        direction_facing = 1;
+    }else if (!place_meeting(x+1,y,obj_floor)) {
+          x+= 1;
+          direction_facing = 1;
+    }
 }
 if (key_jump == true 
 //&amp;&amp; jump_height != 100 
