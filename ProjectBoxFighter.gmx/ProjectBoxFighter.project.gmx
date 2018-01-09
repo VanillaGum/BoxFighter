@@ -39,6 +39,7 @@
       <script>scripts\scr_player_gainxp.gml</script>
       <script>scripts\scr_player_levelup.gml</script>
     </scripts>
+    <script>scripts\scr_get_shop.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -50,6 +51,7 @@
     <object>objects\obj_hitbox</object>
     <object>objects\obj_spawner_test</object>
     <object>objects\obj_door</object>
+    <object>objects\shop_system</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
