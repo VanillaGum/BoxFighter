@@ -46,7 +46,7 @@ if (bounce > 0) {
    }else {
    //Can go down floor type
    }
-}else {
+}else if(direction_chase == -1){
    //Go Right
    if (type == 0) {
       //Check if there is floor 
@@ -77,4 +77,20 @@ if (bounce > 0) {
    }else {
    //Can go down floor type
    }
-}
+}else {
+      if(direction_chase < -1) {
+            //Go Right
+            x+=enemy_speed;
+            direction_chase-= enemy_speed;
+            if(direction_chase >= -1) {
+               direction_chase = 0;
+            }
+      }else if (direction_chase > 1){
+            //Go Left
+            x-=enemy_speed;
+            direction_chase-= enemy_speed;
+            if(direction_chase <= 1) {
+               direction_chase = 0;
+            }
+      }
+}     

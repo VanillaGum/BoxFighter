@@ -13,10 +13,10 @@ if (direction_chase == 0) {
     }  
 }else{
    if (x == obj_player.x) {
-       return direction_chase;
+       return (direction_chase*enemy_speed*3);
    }else if (x <obj_player.x) {
-       return -1;
+       return -(enemy_speed*3);
     }else if (x > obj_player.x) {
-       return 1;
+       return (enemy_speed*2);
     }
 }
